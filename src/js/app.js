@@ -8,8 +8,6 @@
         .controller('InventoryController', function() {
 
             this.tax = 0.0575;
-            this.totalPrice = null;
-
             this.items = [{
                 "id": 2957,
                 "name": "widget",
@@ -95,12 +93,11 @@
                 "color": "black",
                 "discount": 12
             }];
-
             this.getTotalPrice = function(price, discount) {
-                var discountPrice = ((price - discount) * (1 + this.tax)).toFixed(2);
-                return Number(discountPrice).toLocaleString('en');
+                var discountPrice = ((price - discount) * (1 + this.tax));
+                this.totalPrice = discountPrice;
+                return Number(discountPrice);
             };
-
             this.discountImage = function(discounts) {
                 if (discounts > 0) {
                     return discounts;
@@ -108,6 +105,13 @@
                     return false;
                 }
             };
+            this.getPriceValue = function(array) {
+              for (var index = 0; index < array.length; index++) {
+                var discountPrice = ((array[index].price - array[index].discount) * (1 + this.tax));
+                array[index].totalPrice = discountPrice;
+              }
+            };
+            this.getPriceValue(this.items);
         });
 
 })(jQuery);

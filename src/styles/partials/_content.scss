@@ -64,8 +64,11 @@ body {
             line-height: 40px;
             padding-left: 20px;
 
+            &:nth-child(2) {
+              text-align: left;
+            }
+
             img {
-                padding-right: 30px;
                 margin-bottom: -10px;
             }
         }

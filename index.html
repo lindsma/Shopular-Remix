@@ -27,14 +27,28 @@
                     <th>Quantity</th>
                     <th>Color</th>
                 </tr>
-                <tr ng-repeat="item in inventory.items" class='item-info'>
+                <tr ng-repeat="item in inventory.items | orderBy: 'totalPrice'" class='item-info'>
                     <td>{{item.name}}</td>
-                    <td>$ {{inventory.getTotalPrice(item.price, item.discount)}}</td>
+                    <td>{{item.totalPrice | currency}} <img ng-show='item.discount' src='images/discount_tag.png' /></td>
                     <td>{{item.quantity}}</td>
                     <td>{{item.color}} </td>
-                    <td class='sale-tag'><img ng-show='inventory.discountImage(item.discount)' src='images/discount_tag.png' /></td>
                 </tr>
             </table>
+            <div class='form-container'>
+              <form name='newItemForm' class='item-form' novalidate ng-submit='newItemForm.$valid' >
+                <ul class='form-fields'>
+                  <li><label for='addItem'> Add Item
+                  <input name='addItem' id='addItem' ng-model='addItem' ng-required = 'true'></li>
+                  <li><label for='addPrice'> Price
+                  <input name='addPrice' id='addPrice' type='number' ng-model='addPrice' ng-required = 'true'></li>
+                  <li><label for='addQuantity'> Quantity
+                  <input name='addQuantity' id='addQuantity' type='number' ng-model='addQuantity' ng-required ='true'></li>
+                  <li><label for='addColor'> Color
+                  <input name='addColor' id='addColor' ng-model='addColor' ng-required='true'></li>
+                  <li><button class='submit' ng-disabled='newItemForm.$invalid'>Add Item</button></li>
+                </ul>
+              </form>
+            </div>
         </div>
     </main>
     <footer></footer>
