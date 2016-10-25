@@ -1,0 +1,73 @@
+body,
+html {
+    height: 100%;
+}
+
+body {
+    background: url('../../images/ignasi_pattern_s.png');
+}
+
+.container {
+    width: 80%;
+    background: $lapisLazuli;
+    border-radius: 10px;
+    border: 4px solid $seaFoamGreen;
+    margin: 30px auto;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+
+    table {
+        width: 100%;
+        font-family: $rubik;
+        font-size: 20px;
+
+        caption {
+            font-size: 40px;
+            color: $veryLightGrey;
+            margin-top: 10px;
+
+            hr {
+                width: 80%;
+                opacity: 0.6;
+            }
+        }
+
+        th {
+            color: $veryLightGrey;
+            font-size: 30px;
+            width: 20%;
+            text-align: left;
+            line-height: 50px;
+
+            &:first-child {
+                width: 39%;
+                text-align: center;
+            }
+
+            &:last-child {
+                width: 10%;
+            }
+        }
+
+        tr.item-info {
+            &:nth-child(odd) {
+                background: $greenSheen;
+            }
+
+            &:nth-child(even) {
+                background: $veryLightGrey;
+            }
+        }
+
+        td {
+            line-height: 40px;
+            padding-left: 20px;
+
+            img {
+                padding-right: 30px;
+                margin-bottom: -10px;
+            }
+        }
+    }
+}

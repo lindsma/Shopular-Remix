@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app="inventory">
+
+<head>
+    <meta charset='UTF-8'>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Shopular</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Montserrat|Nunito|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="lib/styles/main.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Shopular</h1>
+    </header>
+    <main>
+        <div ng-controller='InventoryController as inventory' class="container">
+            <table class='item-container'>
+                <caption>Inventory
+                    <hr>
+                </caption>
+                <tr>
+                    <th>Item</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Color</th>
+                </tr>
+                <tr ng-repeat="item in inventory.items" class='item-info'>
+                    <td>{{item.name}}</td>
+                    <td>$ {{inventory.getTotalPrice(item.price, item.discount)}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.color}} </td>
+                    <td class='sale-tag'><img ng-show='inventory.discountImage(item.discount)' src='images/discount_tag.png' /></td>
+                </tr>
+            </table>
+        </div>
+    </main>
+    <footer></footer>
+
+    <script src="lib/js/vendor.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="lib/js/app.js"></script>
+</body>
+
+</html>
