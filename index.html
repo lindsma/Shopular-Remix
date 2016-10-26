@@ -35,7 +35,7 @@
                 </tr>
             </table>
             <div class='form-container'>
-              <form name='newItemForm' class='item-form' novalidate ng-submit='newItemForm.$valid' >
+              <form name='newItemForm' class='item-form' novalidate ng-submit='newItemForm.$valid && addItem()' >
                 <ul class='form-fields'>
                   <li><label for='addItem'> Add Item
                   <input name='addItem' id='addItem' ng-model='addItem' ng-required = 'true'></li>
@@ -45,6 +45,8 @@
                   <input name='addQuantity' id='addQuantity' type='number' ng-model='addQuantity' ng-required ='true'></li>
                   <li><label for='addColor'> Color
                   <input name='addColor' id='addColor' ng-model='addColor' ng-required='true'></li>
+                  <li><label for='addDiscount'> Discount
+                  <input name='addDiscount' id='addDiscount' ng-model='addDiscount' ng-required='true'></li>
                   <li><button class='submit' ng-disabled='newItemForm.$invalid'>Add Item</button></li>
                 </ul>
               </form>

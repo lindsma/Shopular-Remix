@@ -112,6 +112,17 @@
               }
             };
             this.getPriceValue(this.items);
+
+            this.addItem = function() {
+              var items = getItems();
+              var item = new NewItem({
+                name: addItem,
+                price: addPrice,
+                color: addColor,
+                quantity: addQuantity
+              });
+
+            };
         });
 
 })(jQuery);
