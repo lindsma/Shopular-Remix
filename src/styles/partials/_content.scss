@@ -40,6 +40,11 @@ body {
             text-align: left;
             line-height: 50px;
 
+            a {
+              cursor: pointer;
+            }
+
+
             &:first-child {
                 width: 39%;
                 text-align: center;

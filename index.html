@@ -22,12 +22,12 @@
                     <hr>
                 </caption>
                 <tr>
-                    <th>Item</th>
-                    <th>Price</th>
-                    <th>Quantity</th>
-                    <th>Color</th>
+                    <th><a ng-click="orderByField='name';reverse=!reverse">Item</a></th>
+                    <th><a ng-click="orderByField='totalPrice';reverse=!reverse">Price</a></th>
+                    <th><a ng-click="orderByField='quantity';reverse=!reverse">Quantity</a></th>
+                    <th><a ng-click="orderByField='color';reverse=!reverse">Color</a></th>
                 </tr>
-                <tr ng-repeat="item in inventory.items | orderBy: 'totalPrice'" class='item-info'>
+                <tr ng-repeat="item in inventory.items | orderBy:orderByField:reverse" class='item-info'>
                     <td>{{item.name}}</td>
                     <td>{{item.totalPrice | currency}} <img ng-show='item.discount' src='images/discount_tag.png' /></td>
                     <td>{{item.quantity}}</td>
@@ -35,18 +35,18 @@
                 </tr>
             </table>
             <div class='form-container'>
-              <form name='newItemForm' class='item-form' novalidate ng-submit='newItemForm.$valid && addItem()' >
-                <ul class='form-fields'>
-                  <li><label for='addItem'> Add Item
-                  <input name='addItem' id='addItem' ng-model='addItem' ng-required = 'true'></li>
-                  <li><label for='addPrice'> Price
-                  <input name='addPrice' id='addPrice' type='number' ng-model='addPrice' ng-required = 'true'></li>
-                  <li><label for='addQuantity'> Quantity
-                  <input name='addQuantity' id='addQuantity' type='number' ng-model='addQuantity' ng-required ='true'></li>
-                  <li><label for='addColor'> Color
-                  <input name='addColor' id='addColor' ng-model='addColor' ng-required='true'></li>
-                  <li><label for='addDiscount'> Discount
-                  <input name='addDiscount' id='addDiscount' ng-model='addDiscount' ng-required='true'></li>
+                <form name='newItemForm' class='item-form' novalidate ng-submit='newItemForm.$valid && inventory.addItem()'>
+                    <ul class='form-fields'>
+                        <li><label for='name'> Add Item
+                  <input name='name' ng-model='inventory.NewItem.name' ng-required = 'true'></li>
+                  <li><label for='price'> Price
+                  <input name='price' type='number' ng-model='inventory.NewItem.price' ng-required = 'true'></li>
+                  <li><label for='quantity'> Quantity
+                  <input name='quantity' type='number' ng-model='inventory.NewItem.quantity' ng-required ='true'></li>
+                  <li><label for='color'> Color
+                  <input name='color' ng-model='inventory.NewItem.color' ng-required='true'></li>
+                  <li><label for='discount'> Discount
+                  <input name='discount' type='number' ng-model='inventory.NewItem.discount' ng-required='true'></li>
                   <li><button class='submit' ng-disabled='newItemForm.$invalid'>Add Item</button></li>
                 </ul>
               </form>
@@ -57,6 +57,8 @@
 
     <script src="lib/js/vendor.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="./node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="./node_modules/angular-local-storage/dist/angular-local-storage.min.js"></script>
     <script src="lib/js/app.js"></script>
 </body>
 
