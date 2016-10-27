@@ -97,7 +97,7 @@
                 "discount": 12
             }];
 
-
+            // determine whether to show sale tag
             this.discountImage = function(discounts) {
                 if (discounts > 0) {
                     return discounts;
@@ -105,6 +105,8 @@
                     return false;
                 }
             };
+
+            // get total price
             this.getPriceValue = function(array) {
                 for (var index = 0; index < array.length; index++) {
                     var discountPrice = ((array[index].price - array[index].discount) * (1 + this.tax));
@@ -115,16 +117,20 @@
 
             this.getPriceValue(this.items);
 
-
+            // new item constructor
             function NewItem(item) {
                 item = item || {};
                 this.id = Date.now();
             }
 
+            // create new item and push to array 
             this.addItem = function() {
                 var newItem = new NewItem();
                 this.items.push(this.NewItem);
                 this.getPriceValue(this.items);
+
+                this.NewItem = null;
+
             };
 
         });

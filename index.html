@@ -47,7 +47,7 @@
                   <input name='color' ng-model='inventory.NewItem.color' ng-required='true'></li>
                   <li><label for='discount'> Discount
                   <input name='discount' type='number' ng-model='inventory.NewItem.discount' ng-required='true'></li>
-                  <li><button class='submit' ng-disabled='newItemForm.$invalid'>Add Item</button></li>
+                  <li><button class='submit' ng-disabled='newItemForm.$invalid' ng-click="resetForm()">Add Item</button></li>
                 </ul>
               </form>
             </div>

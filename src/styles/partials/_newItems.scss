@@ -1,39 +1,39 @@
 .form-container {
-  height: 100px;
-  margin-left: 20px;
-  background: $lapisLazuli;
-  color: white;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+    height: 100px;
+    margin-left: 20px;
+    background: $lapisLazuli;
+    color: white;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 
-  ul.form-fields {
-    width: 100%;
+    ul.form-fields {
+        width: 100%;
 
-    li {
-      float: left;
-      line-height: 50px;
-      font-family: $rubik;
-      width: 18%;
+        li {
+            float: left;
+            line-height: 50px;
+            font-family: $rubik;
+            width: 18%;
 
-      &:last-child {
-        width: 10%;
-      }
+            &:last-child {
+                width: 10%;
+            }
 
-      input {
-        height: 30px;
-        display: block;
-      }
+            input {
+                height: 30px;
+                display: block;
+            }
 
-      button {
-        margin: 30px 10px 0 0;
-        height: 40px;
-        border-radius: 10px;
-      }
+            button {
+                margin: 30px 10px 0 0;
+                height: 40px;
+                border-radius: 10px;
+            }
+        }
     }
-  }
 }
 
 input.ng-invalid {
-  background: #ff4c4c;
-  opacity: .6;
+    background: #ff4c4c;
+    opacity: 0.6;
 }
