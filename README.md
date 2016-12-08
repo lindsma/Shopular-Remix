@@ -2,7 +2,7 @@
 
  https://lindsma.github.io/Shopular-Remix/
  
- ## Week 7 
+## Week 7 
 
 #### Objective:
 Utilize Angular to build a web application for a shop's inventory. Allow the user to add items to the inventory and sort items in the table. 
